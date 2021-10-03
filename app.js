@@ -1,3 +1,5 @@
+// nav bar
+
 let navBarListItems = document.querySelectorAll(".nav-bar__list--item")
 let navBarMarker = document.querySelector(".nav-bar__marker")
 let homeItem = document.querySelector(".nav-bar__list--item")
@@ -10,9 +12,9 @@ function handleNavMarkerMovement(e) {
 	let lastMarkerLeft = Number(navBarMarker.style.left.replace('px', ''))
 
 	if (lastMarkerLeft > selectedItem.offsetLeft) {
-		navBarMarker.classList.add('rightLean')
+		navBarMarker.classList.add('right-leaning-stripes')
 	} else {
-		navBarMarker.classList.remove('rightLean')
+		navBarMarker.classList.remove('right-leaning-stripes')
 	}
 	
 	navBarMarker.style.left = selectedItem.offsetLeft + 'px'
@@ -20,3 +22,5 @@ function handleNavMarkerMovement(e) {
 }
 
 navBarListItems.forEach(item => item.addEventListener('mouseenter', handleNavMarkerMovement))
+
+// about section
