@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid black;
 }
 
-.about-section__stripey {
+.stripey {
     height: 100%;
     width: 100%;
     clip-path: polygon(0% 0%, 50% 0%, 25% 100%, 0% 100%);
@@ -99,16 +99,31 @@ h1, h2, h3, h4, h5, h6 {
     animation: moveInBottomUp 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.right-stripey {
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 50% 100%);
+    background-image: repeating-linear-gradient(
+		45deg,
+		black,
+		black 1px,
+		transparent 1px,
+		transparent 10px
+		);
+    background-repeat: no-repeat;
+    animation: moveInBottomUp 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 .about-section__text {
     font-weight: 300;
     font-style: normal;
     position: absolute;
-    top: 27vh;
-    left: 35vw;
+    top: 28vw;
+    left: 37vw;
     transform: translate(-50%, -50%);
     background-color: tan;
     border: 1px double black;
-    font-size: 2vw;
+    font-size: 2.5vh;
     outline: 5px solid tan;
     text-align: center;
 }
@@ -146,17 +161,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .projects-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    place-items: center;
     gap: 1rem;
     color: black;
     border-bottom: 1px solid black;
+    padding: 1rem;
 }
 
 .projects-section__project {
-    height: 60vh;
+    height: 33vw;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
     border: 1px solid black;
-    margin: 1rem;
+    place-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.projects-section__project:hover {
+    /* transform-style: preserve-3d; */
+    perspective: 10px;
+    transition: all 5s;
+    transform: skewY(180deg);
+}
+
+.projects-section__project--links {
+    padding: 1rem;
+
 }
